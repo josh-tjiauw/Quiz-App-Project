@@ -21,6 +21,17 @@
         <input type="button" value="Results" onclick="results()" 
     </div> 
 
+    <div class="quiz-container">
+        <h1 id="question">Question</h1>
+        <div id="choices" class="choices-container">
+            <label><input type="radio" name="choice" value="A"> <span id="choiceA"></span></label><br>
+            <label><input type="radio" name="choice" value="B"> <span id="choiceB"></span></label><br>
+            <label><input type="radio" name="choice" value="C"> <span id="choiceC"></span></label><br>
+            <label><input type="radio" name="choice" value="D"> <span id="choiceD"></span></label><br>
+        </div>
+        <button onclick="checkAnswer()">Submit Answer</button>
+        <p id="result"></p>
+    </div>
     <script src="scripts/main.js" charset="utf-8"></script>
 
 </body>

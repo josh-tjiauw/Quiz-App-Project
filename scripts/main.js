@@ -68,4 +68,52 @@ window.route = route;
 // call the urlLocationHandler function to handle the initial url
 locationHandler();
 
- // viewSwap('home');
+//Quiz logic: create an js object with values question, choices, answer
+const quizData = [
+  {
+      question: "What is the capital of France?",
+      choices: ["A. London", "B. Paris", "C. Rome", "D. Madrid"],
+      correctAnswer: "B"
+  },
+  {
+      question: "Who wrote 'Romeo and Juliet'?",
+      choices: ["A. William Shakespeare", "B. Charles Dickens", "C. Jane Austen", "D. Mark Twain"],
+      correctAnswer: "A"
+  },
+];
+
+let currentQuestion = 0;
+const questionElement = document.getElementById('question');
+const choicesElement = document.getElementById('choices');
+const resultElement = document.getElementById('result');
+
+function loadQuestion() {
+  const currentQuizData = quizData[currentQuestion];
+  questionElement.innerText = currentQuizData.question;
+  choicesElement.innerHTML = currentQuizData.choices.join('<br>');
+}
+
+function checkAnswer() {
+  const selectedOption = document.querySelector('input[name="choice"]:checked');
+  if (!selectedOption) {
+      alert('Please select an answer.');
+      return;
+  }
+
+  const userAnswer = selectedOption.value;
+  const currentQuizData = quizData[currentQuestion];
+  if (userAnswer === currentQuizData.correctAnswer) {
+      resultElement.innerText = 'Correct!';
+  } else {
+      resultElement.innerText = 'Wrong! The correct answer is ' + currentQuizData.correctAnswer;
+  }
+
+  currentQuestion++;
+  if (currentQuestion < quizData.length) {
+      loadQuestion();
+  } else {
+      resultElement.innerText += ' Quiz completed!';
+  }
+}
+
+loadQuestion();
