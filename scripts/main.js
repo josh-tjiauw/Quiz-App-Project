@@ -9,6 +9,8 @@ function login(){
   window.location.assign("./main.html")
 }
 
+//testing push
+//testing 2
 
 const routes = {
   404: {
