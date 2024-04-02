@@ -9,9 +9,6 @@ function login(){
   window.location.assign("./main.html")
 }
 
-//testing push
-//testing 2
-
 const routes = {
   404: {
     template: "/pages/404.html",
@@ -117,5 +114,15 @@ function checkAnswer() {
       resultElement.innerText += ' Quiz completed!';
   }
 }
+
+//script to save login info
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var username =  document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var userObject = { username: username, password: password};
+  localStorage.setItem("userObject", JSON.stringify(userObject));
+  window.location.href = ""
+})
 
 loadQuestion();
