@@ -122,7 +122,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
   var password = document.getElementById("password").value;
   var userObject = { username: username, password: password};
   localStorage.setItem("userObject", JSON.stringify(userObject));
-  window.location.href = ""
+  window.location.href = "poop"
 })
 
 loadQuestion();
