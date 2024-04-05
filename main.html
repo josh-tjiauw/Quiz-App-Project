@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+        <link rel="stylesheet" href="styles/style.css" />
 
-    <title>Quiz App</title>
- 
-</head>
+        <title>Quiz App</title>
 
-<body>
+    </head>
 
-    <h1>This is the Login page</h1>
+    <body>
 
-    <div class="login-box">
-        <h2>Login</h2>
-        <form id="login-form">
-        <input type="text" id="username" name="username" placeholder="Username">
-        <input type="text" id="password" name="password" placeholder="Password">
-        <input type="submit" value="Login">
-         </form>
+        <h1>This is the Login page</h1>
 
-    </div>
-    <div>
-        <input type="button" value="Quiz" onclick="quiz()">
-    </div>
-    <div>
-        <input type="button" value="Results" onclick="results()"
-    </div>
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" name="username"
+                    placeholder="Username">
+                <input type="text" id="password" name="password"
+                    placeholder="Password">
+                <input type="submit" value="Login">
+            </form>
+
+        </div>
+        
+        <script>
+
+        console.log("outside event listener");
+        //event listener
+        
+            console.log("1");
+            document.getElementById("login-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                var username =  document.getElementById("username").value;
+
+                var dataFrame = document.getElementById("dataframe").contentWindow;
+                dataframe.postMessage(username, "*");
+
+                console.log("Username saved:", username );
+
+        });
+        console.log("test3")
+
     
-    <script src="scripts/main.js" charset="utf-8"></script>
-</body>
+  
 
-</html>
+        </script>
+
+            <div>
+                <input type="button" value="Quiz" onclick="quiz()">
+            </div>
+            <div>
+                <input type="button" value="Results" onclick="results()"
+            </div>
+            
+            <iframe id="dataFrame" src="results.html"></iframe>
+            <script src="scripts/main.js" charset="utf-8"></script>   
+    </body>
+    
+    </html>

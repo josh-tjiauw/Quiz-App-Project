@@ -8,6 +8,23 @@
 <body>
 
     <h1>This is results</h1>
+    
+    <script>
+        console.log("yo")
+
+        function handleMessage(event){
+            localStorage.setItem("username", event.data)
+            console.log("Recieved the bitch: ", event.data);
+        }
+        
+        window.addEventListener("message", handleMessage) 
+
+        console.log("2")
+    </script>
+
+    <div>
+        <h2></h2>
+    </div>
     <div>
         <input type="button" value="Login" onclick="login()">
     </div>
@@ -18,7 +35,7 @@
         <input type="button" value="Results" onclick="results()"
     </div>
     
-    <script src="./scripts/main.js" charset="utf-8"></script>
-
+    
+    <script src="scripts/main.js" charset="utf-8"></script>
 </body>
 </html>
