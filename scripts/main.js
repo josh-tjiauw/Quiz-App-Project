@@ -116,13 +116,15 @@ function checkAnswer() {
 }
 
 //script to save login info
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+document.getElementById("login-box").addEventListener("submit", function(event) {
   event.preventDefault();
   var username =  document.getElementById("username").value;
   var password = document.getElementById("password").value;
-  var userObject = { username: username, password: password};
+  var userObject = { 
+     username: username,
+     password: password};
   localStorage.setItem("userObject", JSON.stringify(userObject));
-  window.location.href = "poop"
+  
 })
 
 loadQuestion();
