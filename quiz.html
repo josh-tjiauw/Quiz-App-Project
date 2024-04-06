@@ -11,28 +11,13 @@
 <body>
 
     <h1>This is the quiz page</h1>
-    <div>
-        <input type="button" value="Login" onclick="login()">
-    </div>
-    <div>
-        <input type="button" value="Quiz" onclick="quiz()">
-    </div>
-    <div>
-        <input type="button" value="Results" onclick="results()" 
-    </div> 
-
     <div class="quiz-container">
-        <h1 id="question">Question</h1>
-        <div id="choices" class="choices-container">
-            <button onclick="selectAnswer('A')">A</button>
-            <button onclick="selectAnswer('B')">B</button>
-            <button onclick="selectAnswer('C')">C</button>
-            <button onclick="selectAnswer('D')">D</button>
-        </div>
-        <button onclick="">Submit Answer</button>
-        <p id="result"></p>
+    <div id="question"></div>
+    <div id="choices"></div>
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result"></div>
     </div>
-    <script src="scripts/main.js" charset="utf-8"></script>
+    <script src="scripts/quiz.js" charset="utf-8"></script>
 
 </body>
 
