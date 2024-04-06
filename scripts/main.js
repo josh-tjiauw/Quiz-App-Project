@@ -80,9 +80,19 @@ const quizData = [
     correctAnswer: "B. Paris"
   },
   {
-    question: "Who wrote 'Romeo and Juliet'?",
-    choices: ["A. William Shakespeare", "B. Charles Dickens", "C. Jane Austen", "D. Mark Twain"],
-    correctAnswer: "A. William Shakespeare"
+    question: "What is the capital of the US?",
+    choices: ["A. Washington D.C", "B. Paris", "C. Rome", "D. Madrid"],
+    correctAnswer: "A. Washington D.C"
+  },
+  {
+    question: "What is the capital of England?",
+    choices: ["A. Washington D.C", "B. Paris", "C. London", "D. Madrid"],
+    correctAnswer: "C. London"
+  },
+  {
+    question: "What is the capital of Spain?",
+    choices: ["A. Washington D.C", "B. Paris", "C. London", "D. Madrid"],
+    correctAnswer: "D. Madrid"
   },
 ];
 
