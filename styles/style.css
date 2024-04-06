@@ -25,3 +25,17 @@ button.selected {
     background-color: #4CAF50; 
     color: white;
 }
+
+.quiz-answer-container {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    width: 600px;  
+    height: 160px; 
+}
+
