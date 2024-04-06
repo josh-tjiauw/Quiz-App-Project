@@ -71,52 +71,56 @@ window.route = route;
 // call the urlLocationHandler function to handle the initial url
 locationHandler();
 
-//Quiz logic: create an js object with values question, choices, answer
+//Quiz logic: create a js object with values question, choices, answer
+// Quiz data structure
 const quizData = [
   {
-      question: "What is the capital of France?",
-      choices: ["A. London", "B. Paris", "C. Rome", "D. Madrid"],
-      correctAnswer: "B"
+    question: "What is the capital of France?",
+    choices: ["A. London", "B. Paris", "C. Rome", "D. Madrid"],
+    correctAnswer: "B. Paris"
   },
   {
-      question: "Who wrote 'Romeo and Juliet'?",
-      choices: ["A. William Shakespeare", "B. Charles Dickens", "C. Jane Austen", "D. Mark Twain"],
-      correctAnswer: "A"
+    question: "Who wrote 'Romeo and Juliet'?",
+    choices: ["A. William Shakespeare", "B. Charles Dickens", "C. Jane Austen", "D. Mark Twain"],
+    correctAnswer: "A. William Shakespeare"
   },
 ];
 
+// Variables and elements
 let currentQuestion = 0;
 const questionElement = document.getElementById('question');
 const choicesElement = document.getElementById('choices');
 const resultElement = document.getElementById('result');
 
+// Function to load question
 function loadQuestion() {
   const currentQuizData = quizData[currentQuestion];
-  questionElement.innerText = currentQuizData.question;
-  choicesElement.innerHTML = currentQuizData.choices.join('<br>');
+  questionElement.textContent = currentQuizData.question;
+  choicesElement.innerHTML = "";
+  currentQuizData.choices.forEach((choice, index) => {
+    const choiceElement = document.createElement("button");
+    choiceElement.textContent = choice;
+    choiceElement.onclick = () => checkAnswer(choiceElement.textContent);
+    choicesElement.appendChild(choiceElement);
+  });
 }
 
-function checkAnswer() {
-  const selectedOption = document.querySelector('input[name="choice"]:checked');
-  if (!selectedOption) {
-      alert('Please select an answer.');
-      return;
-  }
-
-  const userAnswer = selectedOption.value;
+// Function to check answer
+function checkAnswer(answer) {
   const currentQuizData = quizData[currentQuestion];
-  if (userAnswer === currentQuizData.correctAnswer) {
-      resultElement.innerText = 'Correct!';
+  if (answer === currentQuizData.correctAnswer) {
+    resultElement.textContent = "Correct!";
   } else {
-      resultElement.innerText = 'Wrong! The correct answer is ' + currentQuizData.correctAnswer;
+    resultElement.textContent = "Incorrect. The correct answer is: " + currentQuizData.correctAnswer;
   }
-
   currentQuestion++;
   if (currentQuestion < quizData.length) {
-      loadQuestion();
+    loadQuestion();
   } else {
-      resultElement.innerText += ' Quiz completed!';
+    resultElement.textContent = "Quiz completed!";
+    choicesElement.innerHTML = "";
   }
 }
 
+// Initial load
 loadQuestion();

@@ -16,3 +16,12 @@ body {
 .choices-container {
     margin-bottom: 10px;
 }
+
+button {
+    margin: 5px;
+}
+
+button.selected {
+    background-color: #4CAF50; 
+    color: white;
+}

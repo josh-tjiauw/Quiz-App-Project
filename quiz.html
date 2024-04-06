@@ -24,12 +24,12 @@
     <div class="quiz-container">
         <h1 id="question">Question</h1>
         <div id="choices" class="choices-container">
-            <label><input type="radio" name="choice" value="A"> <span id="choiceA"></span></label><br>
-            <label><input type="radio" name="choice" value="B"> <span id="choiceB"></span></label><br>
-            <label><input type="radio" name="choice" value="C"> <span id="choiceC"></span></label><br>
-            <label><input type="radio" name="choice" value="D"> <span id="choiceD"></span></label><br>
+            <button onclick="selectAnswer('A')">A</button>
+            <button onclick="selectAnswer('B')">B</button>
+            <button onclick="selectAnswer('C')">C</button>
+            <button onclick="selectAnswer('D')">D</button>
         </div>
-        <button onclick="checkAnswer()">Submit Answer</button>
+        <button onclick="">Submit Answer</button>
         <p id="result"></p>
     </div>
     <script src="scripts/main.js" charset="utf-8"></script>
