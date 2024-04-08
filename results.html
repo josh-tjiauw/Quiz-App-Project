@@ -9,18 +9,8 @@
 
     <h1>This is results</h1>
     
-    <script>
-        console.log("yo")
-
-        function handleMessage(event){
-            localStorage.setItem("username", event.data)
-            console.log("Recieved the bitch: ", event.data);
-        }
-        
-        window.addEventListener("message", handleMessage) 
-
-        console.log("2")
-    </script>
+    <p id="testing-message"></p>
+    <input type="button" value="Testshit" onclick="getSavedObject()">
 
     <div>
         <h2></h2>
@@ -32,10 +22,15 @@
         <input type="button" value="Quiz" onclick="quiz()">
     </div>
     <div>
-        <input type="button" value="Results" onclick="results()"
+        <input type="button" value="Results" onclick="results()">
     </div>
     
     
     <script src="scripts/main.js" charset="utf-8"></script>
+    <script>
+        let test = getSavedObject();
+        let x = document.getElementById("testing-message");
+        x.textContent = test;
+    </script>
 </body>
 </html>

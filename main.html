@@ -18,7 +18,7 @@
 
         <div class="login-box">
             <h2>Login</h2>
-            <form id="login-form">
+            <form id="login-form" onsubmit="return saveObject()">
                 <input type="text" id="username" name="username"
                     placeholder="Username">
                 <input type="text" id="password" name="password"
@@ -27,8 +27,10 @@
             </form>
 
         </div>
-        
-        <script>
+        <input type="button" value="Testshit" onclick="getSavedObject()">
+
+
+        <!-- <script>
 
         console.log("outside event listener");
         //event listener
@@ -49,7 +51,7 @@
     
   
 
-        </script>
+        </script> -->
 
             <div>
                 <input type="button" value="Quiz" onclick="quiz()">
@@ -58,7 +60,7 @@
                 <input type="button" value="Results" onclick="results()"
             </div>
             
-            <iframe id="dataFrame" src="results.html"></iframe>
+            
             <script src="scripts/main.js" charset="utf-8"></script>   
     </body>
     

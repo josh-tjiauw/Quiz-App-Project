@@ -9,6 +9,33 @@ function login(){
   window.location.assign("./main.html")
 }
 
+// Object.defineProperty(window, 'username', {
+//   get: function(){
+//     return savedUsername;
+//   },
+//   set: function(value){
+//     savedUsername = value;
+//   }
+// })
+
+
+function saveObject()
+{
+  let savedUsername = document.forms["login-form"]["username"].value;
+  console.log("The submitted username is: ", savedUsername);
+  sessionStorage.setItem('username',savedUsername)
+  return false;
+}
+
+function getSavedObject()
+{
+  let username = sessionStorage.getItem('username');
+
+  console.log('This is what was retrieved: ', username )
+}
+
+  
+
 const routes = {
   404: {
     template: "/pages/404.html",
