@@ -9,15 +9,6 @@ function login(){
   window.location.assign("./main.html")
 }
 
-// Object.defineProperty(window, 'username', {
-//   get: function(){
-//     return savedUsername;
-//   },
-//   set: function(value){
-//     savedUsername = value;
-//   }
-// })
-
 
 function saveObject()
 {
