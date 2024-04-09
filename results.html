@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
-    <title>Results Page</title>
-</head>
-
-<nav>
-    <button class="navButton"><a href="./main.html">Home</a></button>
-    <button class="navButton"><a href="./quiz.html">Quiz</a></button>
-    <button class="navButton"><a href="./results.html">Results</a></button>
-</nav>
-
-<body>
-    <h1>Quiz Results</h1>
-    <div>
-        <input type="button" value="Login" onclick="login()">
+    <title>Results</title>
+  </head>
+  <body>
+    <nav>
+      <button class="navButton"><a href="./main.html">Home</a></button>
+      <button class="navButton"><a href="./quiz.html">Quiz</a></button>
+      <button class="navButton"><a href="./results.html">Results</a></button>
+  </nav>
+    <div class="quiz-answer-container">
+      <div class="quiz-answer-percent">
+        <h1>Quiz Completed</h1>
+        <h3 class="store-score">
+          You Scored<span id="quizScore"></span>%
+        </h3>
+        <p1>
+          <a id="quiz-link" href="quiz.html">Click here</a>
+          to go back to quizes
+        </p1>
+      </div>
     </div>
-    <div>
-        <input type="button" value="Quiz" onclick="quiz()">
-    </div>
-    <div>
-        <input type="button" value="Results" onclick="results()"
-    </div>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          var score = localStorage.getItem('quizScore'); // Retrieve the score
+          document.getElementById('quizScore').textContent =  ${score}; // Update the span element
+        });
+      </script>
     <script src="./scripts/main.js" charset="utf-8"></script>
-
-</body>
+  </body>
 </html>
