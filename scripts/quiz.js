@@ -1,3 +1,4 @@
+
 //Quiz logic: create a js object with values question, choices, answer
 // Quiz data structure
 const quizData = [
@@ -36,10 +37,12 @@ const resultElement = document.getElementById("result");
 function loadQuestion() {
   const currentQuizData = quizData[currentQuestion];
   questionElement.textContent = currentQuizData.question;
+  questionElement.classList = 'question'
   choicesElement.innerHTML = "";
   currentQuizData.choices.forEach((choice, index) => {
     const choiceElement = document.createElement("button");
     choiceElement.textContent = choice;
+    choiceElement.className = 'choiceButton';
     choiceElement.onclick = () => selectChoice(choiceElement); // Changed to selectChoice
     choicesElement.appendChild(choiceElement);
   });

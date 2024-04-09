@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Quiz Page</title>
 </head>
 
+<nav>
+    <button class="navButton" onclick="window.location.href='main.html';">Main</button>
+    <button class="navButton" onclick="window.location.href='quiz.html';">Quiz</a></button>
+    <button class="navButton" onclick="window.location.href='results.html';">Results</button>
+</nav>
 
-<body>
-
-    <h1>This is the quiz page</h1>
-    <div class="quiz-container">
-    <div id="question"></div>
-    <div id="choices"></div>
-    <button onclick="checkAnswer()">Submit</button>
-    <div id="result"></div>
+  <body>
+    <h1 class="quiz-header">This is the quiz page</h1>
+    <div class="container">
+      <div id="question"></div>
+      <div id="choices"></div>
+      <button onclick="checkAnswer()">Submit</button>
+      <div id="result"></div>
     </div>
     <script src="scripts/quiz.js" charset="utf-8"></script>
-
-</body>
-
+    <script src="scripts/main.js" charset="utf-8"></script>
+  </body>
 </html>

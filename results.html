@@ -33,3 +33,47 @@
     <script src="./scripts/main.js" charset="utf-8"></script>
   </body>
 </html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <title>Results Page</title>
+ 
+</head>
+<body>
+    <nav>
+        <button class="navButton" onclick="window.location.href='main.html';">Main</button>
+        <button class="navButton" onclick="window.location.href='quiz.html';">Quiz</a></button>
+        <button class="navButton" onclick="window.location.href='results.html';">Results</button>
+    </nav>
+
+    <h1>Quiz Results</h1>
+    <h1>This is results</h1>
+    
+    <p id="testing-message"></p>
+    <input type="button" value="Testshit" onclick="getSavedObject()">
+
+    <div>
+        <h2></h2>
+    </div>
+    <div>
+        <input type="button" value="Login" onclick="login()">
+    </div>
+    <div>
+        <input type="button" value="Quiz" onclick="quiz()">
+    </div>
+    <div>
+        <input type="button" value="Results" onclick="results()">
+    </div>
+    
+    
+    <script src="scripts/main.js" charset="utf-8"></script>
+    <script>
+        let test = getSavedObject();
+        let x = document.getElementById("testing-message");
+        x.textContent = test;
+    </script>
+</body>
+</html>

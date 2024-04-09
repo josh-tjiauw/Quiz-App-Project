@@ -6,9 +6,28 @@ function results(){
   window.location.assign("./results.html")
 }
 function login(){
+  window.location.assign("./login.html")
+}
+function main(){
   window.location.assign("./main.html")
 }
 
+function saveObject()
+{
+  let savedUsername = document.forms["login-form"]["username"].value;
+  console.log("The submitted username is: ", savedUsername);
+  sessionStorage.setItem('username',savedUsername)
+  return false;
+}
+
+function getSavedObject()
+{
+  let username = sessionStorage.getItem('username');
+
+  console.log('This is what was retrieved: ', username )
+}
+
+  
 //testing push
 //testing 2
 //testing pushing to main
@@ -71,66 +90,54 @@ window.route = route;
 // call the urlLocationHandler function to handle the initial url
 locationHandler();
 
-//Quiz logic: create a js object with values question, choices, answer
-// Quiz data structure
+//Quiz logic: create an js object with values question, choices, answer
 const quizData = [
   {
-    question: "What is the capital of France?",
-    choices: ["A. London", "B. Paris", "C. Rome", "D. Madrid"],
-    correctAnswer: "B. Paris"
+      question: "What is the capital of France?",
+      choices: ["A. London", "B. Paris", "C. Rome", "D. Madrid"],
+      correctAnswer: "B"
   },
   {
-    question: "What is the capital of the US?",
-    choices: ["A. Washington D.C", "B. Paris", "C. Rome", "D. Madrid"],
-    correctAnswer: "A. Washington D.C"
-  },
-  {
-    question: "What is the capital of England?",
-    choices: ["A. Washington D.C", "B. Paris", "C. London", "D. Madrid"],
-    correctAnswer: "C. London"
-  },
-  {
-    question: "What is the capital of Spain?",
-    choices: ["A. Washington D.C", "B. Paris", "C. London", "D. Madrid"],
-    correctAnswer: "D. Madrid"
+      question: "Who wrote 'Romeo and Juliet'?",
+      choices: ["A. William Shakespeare", "B. Charles Dickens", "C. Jane Austen", "D. Mark Twain"],
+      correctAnswer: "A"
   },
 ];
 
-// Variables and elements
 let currentQuestion = 0;
 const questionElement = document.getElementById('question');
 const choicesElement = document.getElementById('choices');
 const resultElement = document.getElementById('result');
 
-// Function to load question
 function loadQuestion() {
   const currentQuizData = quizData[currentQuestion];
-  questionElement.textContent = currentQuizData.question;
-  choicesElement.innerHTML = "";
-  currentQuizData.choices.forEach((choice, index) => {
-    const choiceElement = document.createElement("button");
-    choiceElement.textContent = choice;
-    choiceElement.onclick = () => checkAnswer(choiceElement.textContent);
-    choicesElement.appendChild(choiceElement);
-  });
+  questionElement.innerText = currentQuizData.question;
+  choicesElement.innerHTML = currentQuizData.choices.join('<br>');
 }
 
-// Function to check answer
-function checkAnswer(answer) {
-  const currentQuizData = quizData[currentQuestion];
-  if (answer === currentQuizData.correctAnswer) {
-    resultElement.textContent = "Correct!";
-  } else {
-    resultElement.textContent = "Incorrect. The correct answer is: " + currentQuizData.correctAnswer;
+function checkAnswer() {
+  const selectedOption = document.querySelector('input[name="choice"]:checked');
+  if (!selectedOption) {
+      alert('Please select an answer.');
+      return;
   }
+
+  const userAnswer = selectedOption.value;
+  const currentQuizData = quizData[currentQuestion];
+  if (userAnswer === currentQuizData.correctAnswer) {
+      resultElement.innerText = 'Correct!';
+  } else {
+      resultElement.innerText = 'Wrong! The correct answer is ' + currentQuizData.correctAnswer;
+  }
+
   currentQuestion++;
   if (currentQuestion < quizData.length) {
-    loadQuestion();
+      loadQuestion();
   } else {
-    resultElement.textContent = "Quiz completed!";
-    choicesElement.innerHTML = "";
+      resultElement.innerText += ' Quiz completed!';
   }
 }
 
-// Initial load
+
+
 loadQuestion();
