@@ -36,6 +36,12 @@ nav {
     display: flex;
     justify-content: center;
   }
+
+  #submitButton {
+    background-color: #28a745;
+    color: white;
+  }
+
   .selected {
     background-color: yellow;
   }
@@ -168,6 +174,14 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 10px;
+  }
+
+  .correct{
+    color: green;
+  }
+  
+  .wrong{
+    color: red;
   }
 
 h1 {

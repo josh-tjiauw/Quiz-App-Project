@@ -70,9 +70,11 @@ function checkAnswer() {
   const answer = selectedChoice.textContent;
   if (answer === currentQuizData.correctAnswer) {
     resultElement.textContent = "Correct!";
+    resultElement.className = 'correct';
     correctAnswerCount++;
   } else {
     resultElement.textContent = "Incorrect. The correct answer is: " + currentQuizData.correctAnswer;
+    resultElement.className = 'wrong';
   }
   
   // Increment question index
