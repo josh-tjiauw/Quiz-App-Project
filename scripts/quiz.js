@@ -1,3 +1,4 @@
+
 //Quiz logic: create a js object with values question, choices, answer
 // Quiz data structure
 const quizData = [

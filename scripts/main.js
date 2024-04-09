@@ -6,9 +6,11 @@ function results(){
   window.location.assign("./results.html")
 }
 function login(){
+  window.location.assign("./login.html")
+}
+function main(){
   window.location.assign("./main.html")
 }
-
 
 function saveObject()
 {
