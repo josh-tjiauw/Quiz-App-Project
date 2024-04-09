@@ -92,7 +92,7 @@ function checkAnswer() {
     // Calculate the final score
     let quizScore = Math.round((correctAnswerCount / quizData.length) * 100);
     // Store the score in localStorage
-    localStorage.setItem('quizScore', quizScore);
+    sessionStorage.setItem('quizScore', quizScore);
     console.log(quizScore);
 
     // Redirect to results.html or update the UI here

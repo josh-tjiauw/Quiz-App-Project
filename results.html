@@ -8,10 +8,10 @@
   </head>
   <body>
     <nav>
-      <button class="navButton"><a href="./main.html">Home</a></button>
-      <button class="navButton"><a href="./quiz.html">Quiz</a></button>
-      <button class="navButton"><a href="./results.html">Results</a></button>
-  </nav>
+        <button class="navButton" onclick="window.location.href='main.html';">Home</button>
+        <button class="navButton" onclick="window.location.href='quiz.html';">Quiz</a></button>
+        <button class="navButton" onclick="window.location.href='results.html';">Results</button>
+    </nav>
     <div class="quiz-answer-container">
       <div class="quiz-answer-percent">
         <h1>Quiz Completed</h1>
@@ -26,7 +26,7 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-          var score = localStorage.getItem('quizScore'); // Retrieve the score
+          var score = sessionStorage.getItem('quizScore'); // Retrieve the score
           document.getElementById('quizScore').textContent = score; // Update the span element
         });
       </script>

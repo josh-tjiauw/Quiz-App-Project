@@ -86,14 +86,10 @@ nav {
     text-decoration: underline;
   }
   
-  .quiz-answer-container {
+  /* .quiz-answer-container {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+  } */
   
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 
 
 nav {
@@ -102,7 +98,8 @@ nav {
 }
 
 /* Login box CSS */
-.login-box{
+.login-box,
+.quiz-answer-container{
   border:5px solid;
   position:absolute;
   top: 35%;
@@ -197,7 +194,7 @@ a {
 }
 
 /* results page css */
-.quiz-answer-container {
+/* .quiz-answer-container {
   position: absolute;
   top: 21%;
   left: 50%;
@@ -208,7 +205,7 @@ a {
   padding: 20px;
   width: 600px;
   height: 160px; 
-}
+} */
 
 .quiz-answer-percent h1 {
   color: #007bff; 
