@@ -100,6 +100,8 @@ nav {
   text-align: center;
   background-color: #cb413e;
 }
+
+/* Login box CSS */
 .login-box{
   border:5px solid;
   position:absolute;
@@ -194,3 +196,56 @@ a {
   background-color: yellow;
 }
 
+/* results page css */
+.quiz-answer-container {
+  position: absolute;
+  top: 21%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  width: 600px;
+  height: 160px; 
+}
+
+.quiz-answer-percent h1 {
+  color: #007bff; 
+  margin-bottom: 0.5em;
+}
+
+.quiz-answer-percent h3 {
+  color: #28a745; 
+}
+
+#quiz-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.quiz-answer-percent h1 {
+  color: #007bff; 
+  margin-bottom: 0.5em;
+}
+
+.quiz-answer-percent h3 {
+  color: #28a745; 
+}
+
+#quiz-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#quiz-link:hover {
+  color: #0056b3; 
+  text-decoration: underline;
+}
+
+.quiz-answer-container {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -60,7 +60,6 @@ function selectChoice(choiceElement) {
 }
 
 // Function to check answer
-// Function to check answer
 function checkAnswer() {
   if (!selectedChoice) {
     alert('Please select an answer.');
