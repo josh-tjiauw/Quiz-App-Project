@@ -32,6 +32,10 @@ nav {
     background-color: black;
   }
   
+  #choices {
+    display: flex;
+    justify-content: center;
+  }
   .selected {
     background-color: yellow;
   }
