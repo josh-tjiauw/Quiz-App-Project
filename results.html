@@ -7,24 +7,29 @@
     <title>Results</title>
   </head>
   <body>
+    <nav>
+      <button class="navButton"><a href="./main.html">Home</a></button>
+      <button class="navButton"><a href="./quiz.html">Quiz</a></button>
+      <button class="navButton"><a href="./results.html">Results</a></button>
+  </nav>
     <div class="quiz-answer-container">
       <div class="quiz-answer-percent">
         <h1>Quiz Completed</h1>
         <h3 class="store-score">
-          You Scored
-          <!-- <span> id="score"</span>
-                     make script to get score-->
-          %
+          You Scored<span id="quizScore"></span>%
         </h3>
         <p1>
           <a id="quiz-link" href="quiz.html">Click here</a>
-          to go back to quizzes
+          to go back to quizes
         </p1>
       </div>
     </div>
-
-    <!--call the load questions function depending on how it is implemented-->
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const score = localStorage.getItem('quizScore'); // Retrieve the score
+          document.getElementById('quizScore').textContent = ` ${score}`; // Update the span element
+        });
+      </script>
     <script src="./scripts/main.js" charset="utf-8"></script>
   </body>
 </html>
