@@ -10,12 +10,13 @@
     <nav>
         <button class="navButton" onclick="window.location.href='main.html';">Home</button>
         <button class="navButton" onclick="window.location.href='quiz.html';">Quiz</a></button>
-        <button class="navButton" onclick="window.location.href='results.html';">Results</button>
+        
     </nav>
     <div class="quiz-answer-container">
       <div class="quiz-answer-percent">
         <h1>Quiz Completed</h1>
         <h3 class="store-score">
+          Good job <span id="savedUsername"></span>!
           You Scored <span id="quizScore"></span>%
         </h3>
         <p1>
@@ -24,12 +25,15 @@
         </p1>
       </div>
     </div>
+    <script src="./scripts/main.js" charset="utf-8"></script>
     <script>
+        var savedUsername= sessionStorage.getItem('username');
+        document.getElementById('savedUsername').textContent = savedUsername;
         document.addEventListener('DOMContentLoaded', () => {
           var score = sessionStorage.getItem('quizScore'); // Retrieve the score
           document.getElementById('quizScore').textContent = score; // Update the span element
         });
       </script>
-    <script src="./scripts/main.js" charset="utf-8"></script>
+    
   </body>
 </html>

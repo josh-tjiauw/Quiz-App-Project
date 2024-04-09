@@ -20,12 +20,6 @@ function saveObject()
   return false;
 }
 
-function getSavedObject()
-{
-  let username = sessionStorage.getItem('username');
-
-  console.log('This is what was retrieved: ', username )
-}
 
   
 //testing push
